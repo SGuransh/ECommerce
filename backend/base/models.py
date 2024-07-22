@@ -6,7 +6,7 @@ class Product(models.Model):
     user= models.ForeignKey(User, on_delete=models.SET_NULL, null=True)        # if the parent gets deleted then the product is not deleted with this property
                                                                                 # null is false means that you can skip the user 
     name= models.CharField(max_length=200, null=True, blank=True)       # null True means that you cannot skip this, but blank means it can be empty
-    # image=
+    image= models.ImageField(null=True, blank=True)
     brand= models.CharField(max_length=200, null=True, blank=True) 
     category= models.CharField(max_length=200, null=True, blank=True) 
     description= models.TextField(null=True, blank=True)
